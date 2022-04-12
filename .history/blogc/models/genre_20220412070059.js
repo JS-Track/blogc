@@ -8,14 +8,15 @@ var GenreSchema = new Schema({
     type: String,
     required: true,
     enum: ["Fiction", "Non-fiction", "Romance", "Millitary", "History"],
-    default: "Fiction"
-  }
+    default: "Maintenance"
+  },
+  due_back: { type: Date, default: Date.now }
 });
 
 // Virtual for genre's URL
 GenreSchema.virtual("url").get(function () {
-  return "/catalog/genre/" + this._id;
+  return "/catalog/bookinstance/" + this._id;
 });
 
 //Export model
-module.exports = mongoose.model("Genre", GenreSchema);
+module.exports = mongoose.model("BookInstance", GenreSchema);
