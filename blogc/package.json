@@ -15,10 +15,10 @@
     "jade": "~1.11.0",
     "mongodb": "^4.5.0",
     "mongoose": "^6.2.10",
-    "morgan": "~1.9.1",
-    "nodemon": "^2.0.15"
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "eslint": "^8.12.0"
+    "eslint": "^8.12.0",
+    "nodemon": "^2.0.15"
   }
 }
