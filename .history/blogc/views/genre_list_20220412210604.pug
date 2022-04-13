@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each val in genre_list
+      li
+        a(href=val.url) #{val.name.title}
+        if val.name =='Fantasy'
+          span.text-success #{val.name}
+        else if val.name=='Science Fiction'
+          span.text-danger #{val.status}
+        else if val.name=='French Poetry'
+          span.text-primary #{val.name}
+        else
+          span.text-warning #{val.status}
+             if val.name != 'French Poetry' || "Science Fiction" || ""
+        //span  (Due: #{val.due_back} )
+        span  (Due: #{val.due_back_formatted} )
+
+    else
+      li There are no genre.
+
+//-  ul
+//-     each author in author_list
+//-       li
+//-         a(href=author.url) #{author.name}
+//-         |  (#{author.date_of_birth} - #{author.date_of_death})
+
+//-     else
+//-       li There are no authors.
